@@ -117,10 +117,7 @@
       e.preventDefault();
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      const hexRegex = "2f5e5b612d7a412d5a5d2b5c2e61646d696e5c645c2f3b"; // Hex of /^[a-zA-Z]+\.admin\d$/
-const regex = new RegExp(decodeURIComponent('%' + hexRegex.match(/.{1,2}/g).join('%')));
-console.log(regex); // Outputs: /^[a-zA-Z]+\.admin\d$/
-
+      const regex = /^[a-zA-Z]+\.admin\d$/;
 
       try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
